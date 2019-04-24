@@ -1,0 +1,32 @@
+{
+    "newoApp": {
+        "equipoEmpresas": {
+            "home": {
+                "title": "Equipo Empresas",
+                "createLabel": "Create a new Equipo Empresas",
+                "createOrEditLabel": "Create or edit a Equipo Empresas",
+                "search": "Search for Equipo Empresas"
+            },
+            "created": "A new Equipo Empresas is created with identifier {{ param }}",
+            "updated": "A Equipo Empresas is updated with identifier {{ param }}",
+            "deleted": "A Equipo Empresas is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Equipo Empresas {{ id }}?"
+            },
+            "detail": {
+                "title": "Equipo Empresas"
+            },
+            "nombre": "Nombre",
+            "telefono": "Telefono",
+            "correo": "Correo",
+            "direccion": "Direccion",
+            "descripcion": "Descripcion",
+            "logos": "Logos",
+            "paginaWeb": "Pagina Web",
+            "miembros": "Miembros",
+            "facturacion": "Facturacion",
+            "perfilEquipoEmpresa": "Perfil Equipo Empresa",
+            "landing": "Landing"
+        }
+    }
+}

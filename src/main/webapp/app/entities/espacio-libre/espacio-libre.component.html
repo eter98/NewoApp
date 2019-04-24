@@ -1,0 +1,105 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="newoApp.espacioLibre.home.title">Espacio Libres</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-espacio-libre" [routerLink]="['/espacio-libre/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="newoApp.espacioLibre.home.createLabel">
+            Create new Espacio Libre
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'newoApp.espacioLibre.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="espacioLibres">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.capacidadInstalada">Capacidad Instalada</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tipoDeEspacios">Tipo De Espacios</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.wifi">Wifi</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa1hMiembro">Tarifa 1 H Miembro</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa2hMiembro">Tarifa 2 H Miembro</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa3hMiembro">Tarifa 3 H Miembro</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa4hMiembro">Tarifa 4 H Miembro</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa5hMiembro">Tarifa 5 H Miembro</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa6hMiembro">Tarifa 6 H Miembro</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa7hMiembro">Tarifa 7 H Miembro</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa8hMiembro">Tarifa 8 H Miembro</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa1hInvitado">Tarifa 1 H Invitado</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa2hInvitado">Tarifa 2 H Invitado</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa3hInvitado">Tarifa 3 H Invitado</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa4hInvitado">Tarifa 4 H Invitado</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa5hInvitado">Tarifa 5 H Invitado</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa6hInvitado">Tarifa 6 H Invitado</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa7hInvitado">Tarifa 7 H Invitado</span></th>
+            <th><span jhiTranslate="newoApp.espacioLibre.tarifa8hInvitado">Tarifa 8 H Invitado</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let espacioLibre of espacioLibres ;trackBy: trackId">
+                <td><a [routerLink]="['/espacio-libre', espacioLibre.id, 'view' ]">{{espacioLibre.id}}</a></td>
+                <td>{{espacioLibre.capacidadInstalada}}</td>
+                <td>{{espacioLibre.tipoDeEspacios}}</td>
+                <td>{{espacioLibre.wifi}}</td>
+                <td>{{espacioLibre.tarifa1hMiembro}}</td>
+                <td>{{espacioLibre.tarifa2hMiembro}}</td>
+                <td>{{espacioLibre.tarifa3hMiembro}}</td>
+                <td>{{espacioLibre.tarifa4hMiembro}}</td>
+                <td>{{espacioLibre.tarifa5hMiembro}}</td>
+                <td>{{espacioLibre.tarifa6hMiembro}}</td>
+                <td>{{espacioLibre.tarifa7hMiembro}}</td>
+                <td>{{espacioLibre.tarifa8hMiembro}}</td>
+                <td>{{espacioLibre.tarifa1hInvitado}}</td>
+                <td>{{espacioLibre.tarifa2hInvitado}}</td>
+                <td>{{espacioLibre.tarifa3hInvitado}}</td>
+                <td>{{espacioLibre.tarifa4hInvitado}}</td>
+                <td>{{espacioLibre.tarifa5hInvitado}}</td>
+                <td>{{espacioLibre.tarifa6hInvitado}}</td>
+                <td>{{espacioLibre.tarifa7hInvitado}}</td>
+                <td>{{espacioLibre.tarifa8hInvitado}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/espacio-libre', espacioLibre.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/espacio-libre', espacioLibre.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'espacio-libre', { outlets: { popup: espacioLibre.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

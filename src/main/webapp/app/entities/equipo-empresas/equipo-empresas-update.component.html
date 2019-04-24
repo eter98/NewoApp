@@ -1,0 +1,92 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-equipo-empresas-heading" jhiTranslate="newoApp.equipoEmpresas.home.createOrEditLabel">Create or edit a Equipo Empresas</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!equipoEmpresas.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="equipoEmpresas.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.equipoEmpresas.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="equipoEmpresas.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.equipoEmpresas.telefono" for="field_telefono">Telefono</label>
+                    <input type="text" class="form-control" name="telefono" id="field_telefono"
+                        [(ngModel)]="equipoEmpresas.telefono" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.equipoEmpresas.correo" for="field_correo">Correo</label>
+                    <input type="text" class="form-control" name="correo" id="field_correo"
+                        [(ngModel)]="equipoEmpresas.correo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.equipoEmpresas.direccion" for="field_direccion">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="field_direccion"
+                        [(ngModel)]="equipoEmpresas.direccion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.equipoEmpresas.descripcion" for="field_descripcion">Descripcion</label>
+                    <textarea class="form-control" name="descripcion" id="field_descripcion"
+                        [(ngModel)]="equipoEmpresas.descripcion" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.equipoEmpresas.logos" for="field_logos">Logos</label>
+                    <div>
+                        <img [src]="'data:' + equipoEmpresas.logosContentType + ';base64,' + equipoEmpresas.logos" style="max-height: 100px;" *ngIf="equipoEmpresas.logos" alt="equipoEmpresas image"/>
+                        <div *ngIf="equipoEmpresas.logos" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{equipoEmpresas.logosContentType}}, {{byteSize(equipoEmpresas.logos)}}</span>
+                            <button type="button" (click)="clearInputImage('logos', 'logosContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_logos" (change)="setFileData($event, equipoEmpresas, 'logos', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="logos" id="field_logos"
+                        [(ngModel)]="equipoEmpresas.logos" />
+                    <input type="hidden" class="form-control" name="logosContentType" id="field_logosContentType"
+                        [(ngModel)]="equipoEmpresas.logosContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.equipoEmpresas.paginaWeb" for="field_paginaWeb">Pagina Web</label>
+                    <input type="text" class="form-control" name="paginaWeb" id="field_paginaWeb"
+                        [(ngModel)]="equipoEmpresas.paginaWeb" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.equipoEmpresas.miembros" for="field_miembros">Miembros</label>
+                    <select class="form-control" id="field_miembros" name="miembros" [(ngModel)]="equipoEmpresas.miembros">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="miembrosOption.id === equipoEmpresas.miembros?.id ? equipoEmpresas.miembros : miembrosOption" *ngFor="let miembrosOption of miembros; trackBy: trackMiembrosById">{{miembrosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.equipoEmpresas.facturacion" for="field_facturacion">Facturacion</label>
+                    <select class="form-control" id="field_facturacion" name="facturacion" [(ngModel)]="equipoEmpresas.facturacion">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="facturacionOption.id === equipoEmpresas.facturacion?.id ? equipoEmpresas.facturacion : facturacionOption" *ngFor="let facturacionOption of facturacions; trackBy: trackFacturacionById">{{facturacionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.equipoEmpresas.perfilEquipoEmpresa" for="field_perfilEquipoEmpresa">Perfil Equipo Empresa</label>
+                    <select class="form-control" id="field_perfilEquipoEmpresa" name="perfilEquipoEmpresa" [(ngModel)]="equipoEmpresas.perfilEquipoEmpresa">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="perfilEquipoEmpresaOption.id === equipoEmpresas.perfilEquipoEmpresa?.id ? equipoEmpresas.perfilEquipoEmpresa : perfilEquipoEmpresaOption" *ngFor="let perfilEquipoEmpresaOption of perfilequipoempresas; trackBy: trackPerfilEquipoEmpresaById">{{perfilEquipoEmpresaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

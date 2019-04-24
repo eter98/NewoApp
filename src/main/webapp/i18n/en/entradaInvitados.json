@@ -1,0 +1,29 @@
+{
+    "newoApp": {
+        "entradaInvitados": {
+            "home": {
+                "title": "Entrada Invitados",
+                "createLabel": "Create a new Entrada Invitados",
+                "createOrEditLabel": "Create or edit a Entrada Invitados",
+                "search": "Search for Entrada Invitados"
+            },
+            "created": "A new Entrada Invitados is created with identifier {{ param }}",
+            "updated": "A Entrada Invitados is updated with identifier {{ param }}",
+            "deleted": "A Entrada Invitados is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Entrada Invitados {{ id }}?"
+            },
+            "detail": {
+                "title": "Entrada Invitados"
+            },
+            "fechaEntrada": "Fecha Entrada",
+            "horaEntrada": "Hora Entrada",
+            "fechaSalida": "Fecha Salida",
+            "horaSalida": "Hora Salida",
+            "espacioLibre": "Espacio Libre",
+            "registroCompra": "Registro Compra",
+            "invitados": "Invitados",
+            "reservas": "Reservas"
+        }
+    }
+}

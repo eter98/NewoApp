@@ -1,0 +1,115 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-miembros-heading" jhiTranslate="newoApp.miembros.home.createOrEditLabel">Create or edit a Miembros</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!miembros.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="miembros.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                        [(ngModel)]="miembros.nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.apellido" for="field_apellido">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" id="field_apellido"
+                        [(ngModel)]="miembros.apellido" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.nacionalidad" for="field_nacionalidad">Nacionalidad</label>
+                    <input type="text" class="form-control" name="nacionalidad" id="field_nacionalidad"
+                        [(ngModel)]="miembros.nacionalidad" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.fevhaNacimiento" for="field_fevhaNacimiento">Fevha Nacimiento</label>
+                    <div class="input-group">
+                        <input id="field_fevhaNacimiento" type="text" class="form-control" name="fevhaNacimiento" ngbDatepicker  #fevhaNacimientoDp="ngbDatepicker" [(ngModel)]="miembros.fevhaNacimiento"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fevhaNacimientoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.fechaRegistro" for="field_fechaRegistro">Fecha Registro</label>
+                    <div class="input-group">
+                        <input id="field_fechaRegistro" type="text" class="form-control" name="fechaRegistro" ngbDatepicker  #fechaRegistroDp="ngbDatepicker" [(ngModel)]="miembros.fechaRegistro"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaRegistroDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.genero" for="field_genero">Genero</label>
+                    <input type="text" class="form-control" name="genero" id="field_genero"
+                        [(ngModel)]="miembros.genero" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.correoElectronico" for="field_correoElectronico">Correo Electronico</label>
+                    <input type="text" class="form-control" name="correoElectronico" id="field_correoElectronico"
+                        [(ngModel)]="miembros.correoElectronico" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.celular" for="field_celular">Celular</label>
+                    <input type="text" class="form-control" name="celular" id="field_celular"
+                        [(ngModel)]="miembros.celular" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.idEquipoEmprearial" for="field_idEquipoEmprearial">Id Equipo Emprearial</label>
+                    <input type="number" class="form-control" name="idEquipoEmprearial" id="field_idEquipoEmprearial"
+                        [(ngModel)]="miembros.idEquipoEmprearial" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.idSede" for="field_idSede">Id Sede</label>
+                    <input type="number" class="form-control" name="idSede" id="field_idSede"
+                        [(ngModel)]="miembros.idSede" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.derechosDeCompra" for="field_derechosDeCompra">Derechos De Compra</label>
+                    <input type="number" class="form-control" name="derechosDeCompra" id="field_derechosDeCompra"
+                        [(ngModel)]="miembros.derechosDeCompra" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.tipoAcceso" for="field_tipoAcceso">Tipo Acceso</label>
+                    <input type="number" class="form-control" name="tipoAcceso" id="field_tipoAcceso"
+                        [(ngModel)]="miembros.tipoAcceso" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.perfilMiembro" for="field_perfilMiembro">Perfil Miembro</label>
+                    <select class="form-control" id="field_perfilMiembro" name="perfilMiembro" [(ngModel)]="miembros.perfilMiembro">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="perfilMiembroOption.id === miembros.perfilMiembro?.id ? miembros.perfilMiembro : perfilMiembroOption" *ngFor="let perfilMiembroOption of perfilmiembros; trackBy: trackPerfilMiembroById">{{perfilMiembroOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.espacioLibre" for="field_espacioLibre">Espacio Libre</label>
+                    <select class="form-control" id="field_espacioLibre" name="espacioLibre" [(ngModel)]="miembros.espacioLibre">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="espacioLibreOption.id === miembros.espacioLibre?.id ? miembros.espacioLibre : espacioLibreOption" *ngFor="let espacioLibreOption of espaciolibres; trackBy: trackEspacioLibreById">{{espacioLibreOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.miembros.hostSede" for="field_hostSede">Host Sede</label>
+                    <select class="form-control" id="field_hostSede" name="hostSede" [(ngModel)]="miembros.hostSede">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="hostSedeOption.id === miembros.hostSede?.id ? miembros.hostSede : hostSedeOption" *ngFor="let hostSedeOption of hostsedes; trackBy: trackHostSedeById">{{hostSedeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

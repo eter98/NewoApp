@@ -1,0 +1,28 @@
+{
+    "newoApp": {
+        "landing": {
+            "home": {
+                "title": "Landings",
+                "createLabel": "Crear nuevo Landing",
+                "createOrEditLabel": "Crear o editar Landing",
+                "search": "Search for Landing"
+            },
+            "created": "Un nuevo Landing ha sido creado con el identificador {{ param }}",
+            "updated": "Un Landing ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Landing ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Landing {{ id }}?"
+            },
+            "detail": {
+                "title": "Landing"
+            },
+            "descripcion": "Descripcion",
+            "telefonoNegocio": "Telefono Negocio",
+            "numeroPuestos": "Numero Puestos",
+            "numeroOficinas": "Numero Oficinas",
+            "tarifaLanding": "Tarifa Landing",
+            "sedes": "Sedes",
+            "equipoEmpresas": "Equipo Empresas"
+        }
+    }
+}

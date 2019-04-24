@@ -1,0 +1,29 @@
+{
+    "newoApp": {
+        "reservas": {
+            "home": {
+                "title": "Reservas",
+                "createLabel": "Criar novo Reservas",
+                "createOrEditLabel": "Criar ou editar Reservas",
+                "search": "Pesquisar por Reservas"
+            },
+            "created": "Um novo Reservas foi criado com o identificador {{ param }}",
+            "updated": "Um Reservas foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Reservas foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Reservas {{ id }}?"
+            },
+            "detail": {
+                "title": "Reservas"
+            },
+            "fechaEntrada": "Fecha Entrada",
+            "horaEntrada": "Hora Entrada",
+            "fechaSalida": "Fecha Salida",
+            "horaSalida": "Hora Salida",
+            "espaciosReserva": "Espacios Reserva",
+            "entradaInvitados": "Entrada Invitados",
+            "registroCompra": "Registro Compra",
+            "miembros": "Miembros"
+        }
+    }
+}

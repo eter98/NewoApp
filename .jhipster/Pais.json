@@ -1,0 +1,26 @@
+{
+    "name": "Pais",
+    "fields": [
+        {
+            "fieldName": "nombrePais",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "ciudad",
+            "otherEntityRelationshipName": "pais",
+            "relationshipName": "ciudad"
+        }
+    ],
+    "changelogDate": "20190424162957",
+    "entityTableName": "pais",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

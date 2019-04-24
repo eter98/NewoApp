@@ -1,0 +1,28 @@
+{
+    "newoApp": {
+        "perfilEquipoEmpresa": {
+            "home": {
+                "title": "Perfil Equipo Empresas",
+                "createLabel": "Create a new Perfil Equipo Empresa",
+                "createOrEditLabel": "Create or edit a Perfil Equipo Empresa",
+                "search": "Search for Perfil Equipo Empresa"
+            },
+            "created": "A new Perfil Equipo Empresa is created with identifier {{ param }}",
+            "updated": "A Perfil Equipo Empresa is updated with identifier {{ param }}",
+            "deleted": "A Perfil Equipo Empresa is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Perfil Equipo Empresa {{ id }}?"
+            },
+            "detail": {
+                "title": "Perfil Equipo Empresa"
+            },
+            "nombre": "Nombre",
+            "descripcion": "Descripcion",
+            "inventariable": "Inventariable",
+            "valor": "Valor",
+            "impuesto": "Impuesto",
+            "productosServicios": "Productos Servicios",
+            "equipoEmpresas": "Equipo Empresas"
+        }
+    }
+}

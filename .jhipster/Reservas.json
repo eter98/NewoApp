@@ -1,0 +1,59 @@
+{
+    "name": "Reservas",
+    "fields": [
+        {
+            "fieldName": "fechaEntrada",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "horaEntrada",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechaSalida",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "horaSalida",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "espaciosReserva",
+            "otherEntityRelationshipName": "reservas",
+            "relationshipName": "espaciosReserva",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "entradaInvitados",
+            "otherEntityRelationshipName": "reservas",
+            "relationshipName": "entradaInvitados"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "registroCompra",
+            "otherEntityRelationshipName": "reservas",
+            "relationshipName": "registroCompra"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "miembros",
+            "otherEntityRelationshipName": "reservas",
+            "relationshipName": "miembros",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190424162945",
+    "entityTableName": "reservas",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

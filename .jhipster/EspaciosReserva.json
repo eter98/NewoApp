@@ -1,0 +1,86 @@
+{
+    "name": "EspaciosReserva",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "facilidades",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "capacidad",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa1Hora",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa2Hora",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa3Hora",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa4Hora",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa5Hora",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa6Hora",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa7Hora",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa8Hora",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "horario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "wifi",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "sedes",
+            "otherEntityRelationshipName": "espaciosReserva",
+            "relationshipName": "sedes",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "reservas",
+            "otherEntityRelationshipName": "espaciosReserva",
+            "relationshipName": "reservas",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190424162946",
+    "entityTableName": "espacios_reserva",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

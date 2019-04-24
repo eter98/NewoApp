@@ -1,0 +1,110 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-perfil-miembro-heading" jhiTranslate="newoApp.perfilMiembro.home.createOrEditLabel">Create or edit a Perfil Miembro</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!perfilMiembro.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="perfilMiembro.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.perfilMiembro.biografia" for="field_biografia">Biografia</label>
+                    <textarea class="form-control" name="biografia" id="field_biografia"
+                        [(ngModel)]="perfilMiembro.biografia" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.perfilMiembro.foto1" for="field_foto1">Foto 1</label>
+                    <div>
+                        <img [src]="'data:' + perfilMiembro.foto1ContentType + ';base64,' + perfilMiembro.foto1" style="max-height: 100px;" *ngIf="perfilMiembro.foto1" alt="perfilMiembro image"/>
+                        <div *ngIf="perfilMiembro.foto1" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{perfilMiembro.foto1ContentType}}, {{byteSize(perfilMiembro.foto1)}}</span>
+                            <button type="button" (click)="clearInputImage('foto1', 'foto1ContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_foto1" (change)="setFileData($event, perfilMiembro, 'foto1', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="foto1" id="field_foto1"
+                        [(ngModel)]="perfilMiembro.foto1" />
+                    <input type="hidden" class="form-control" name="foto1ContentType" id="field_foto1ContentType"
+                        [(ngModel)]="perfilMiembro.foto1ContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.perfilMiembro.foto2" for="field_foto2">Foto 2</label>
+                    <div>
+                        <img [src]="'data:' + perfilMiembro.foto2ContentType + ';base64,' + perfilMiembro.foto2" style="max-height: 100px;" *ngIf="perfilMiembro.foto2" alt="perfilMiembro image"/>
+                        <div *ngIf="perfilMiembro.foto2" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{perfilMiembro.foto2ContentType}}, {{byteSize(perfilMiembro.foto2)}}</span>
+                            <button type="button" (click)="clearInputImage('foto2', 'foto2ContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_foto2" (change)="setFileData($event, perfilMiembro, 'foto2', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="foto2" id="field_foto2"
+                        [(ngModel)]="perfilMiembro.foto2" />
+                    <input type="hidden" class="form-control" name="foto2ContentType" id="field_foto2ContentType"
+                        [(ngModel)]="perfilMiembro.foto2ContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.perfilMiembro.fot3" for="field_fot3">Fot 3</label>
+                    <div>
+                        <img [src]="'data:' + perfilMiembro.fot3ContentType + ';base64,' + perfilMiembro.fot3" style="max-height: 100px;" *ngIf="perfilMiembro.fot3" alt="perfilMiembro image"/>
+                        <div *ngIf="perfilMiembro.fot3" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{perfilMiembro.fot3ContentType}}, {{byteSize(perfilMiembro.fot3)}}</span>
+                            <button type="button" (click)="clearInputImage('fot3', 'fot3ContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_fot3" (change)="setFileData($event, perfilMiembro, 'fot3', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="fot3" id="field_fot3"
+                        [(ngModel)]="perfilMiembro.fot3" />
+                    <input type="hidden" class="form-control" name="fot3ContentType" id="field_fot3ContentType"
+                        [(ngModel)]="perfilMiembro.fot3ContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.perfilMiembro.conocimientosQueDomina" for="field_conocimientosQueDomina">Conocimientos Que Domina</label>
+                    <input type="text" class="form-control" name="conocimientosQueDomina" id="field_conocimientosQueDomina"
+                        [(ngModel)]="perfilMiembro.conocimientosQueDomina" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.perfilMiembro.temasDeInteres" for="field_temasDeInteres">Temas De Interes</label>
+                    <input type="text" class="form-control" name="temasDeInteres" id="field_temasDeInteres"
+                        [(ngModel)]="perfilMiembro.temasDeInteres" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.perfilMiembro.facebook" for="field_facebook">Facebook</label>
+                    <input type="text" class="form-control" name="facebook" id="field_facebook"
+                        [(ngModel)]="perfilMiembro.facebook" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.perfilMiembro.instagram" for="field_instagram">Instagram</label>
+                    <input type="text" class="form-control" name="instagram" id="field_instagram"
+                        [(ngModel)]="perfilMiembro.instagram" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.perfilMiembro.idGoogle" for="field_idGoogle">Id Google</label>
+                    <input type="text" class="form-control" name="idGoogle" id="field_idGoogle"
+                        [(ngModel)]="perfilMiembro.idGoogle" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.perfilMiembro.twiter" for="field_twiter">Twiter</label>
+                    <input type="text" class="form-control" name="twiter" id="field_twiter"
+                        [(ngModel)]="perfilMiembro.twiter" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

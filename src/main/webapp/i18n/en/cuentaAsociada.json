@@ -1,0 +1,30 @@
+{
+    "newoApp": {
+        "cuentaAsociada": {
+            "home": {
+                "title": "Cuenta Asociadas",
+                "createLabel": "Create a new Cuenta Asociada",
+                "createOrEditLabel": "Create or edit a Cuenta Asociada",
+                "search": "Search for Cuenta Asociada"
+            },
+            "created": "A new Cuenta Asociada is created with identifier {{ param }}",
+            "updated": "A Cuenta Asociada is updated with identifier {{ param }}",
+            "deleted": "A Cuenta Asociada is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cuenta Asociada {{ id }}?"
+            },
+            "detail": {
+                "title": "Cuenta Asociada"
+            },
+            "identificaciontitular": "Identificaciontitular",
+            "correoTitular": "Correo Titular",
+            "nombreTitular": "Nombre Titular",
+            "apellidoTitular": "Apellido Titular",
+            "numeroCuenta": "Numero Cuenta",
+            "tipoCuenta": "Tipo Cuenta",
+            "codigoSeguridad": "Codigo Seguridad",
+            "fechaVencimiento": "Fecha Vencimiento",
+            "facturacion": "Facturacion"
+        }
+    }
+}

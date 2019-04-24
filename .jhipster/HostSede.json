@@ -1,0 +1,34 @@
+{
+    "name": "HostSede",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "miembros",
+            "otherEntityRelationshipName": "hostSede",
+            "relationshipName": "miembros",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "sedes",
+            "otherEntityRelationshipName": "hostSede",
+            "relationshipName": "sedes",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190424162944",
+    "entityTableName": "host_sede",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

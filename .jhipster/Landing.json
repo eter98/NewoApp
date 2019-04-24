@@ -1,0 +1,52 @@
+{
+    "name": "Landing",
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefonoNegocio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroPuestos",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "numeroOficinas",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "tarifaLanding",
+            "otherEntityRelationshipName": "landing",
+            "relationshipName": "tarifaLanding"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "sedes",
+            "otherEntityRelationshipName": "landing",
+            "relationshipName": "sedes",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "equipoEmpresas",
+            "otherEntityRelationshipName": "landing",
+            "relationshipName": "equipoEmpresas",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190424162954",
+    "entityTableName": "landing",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

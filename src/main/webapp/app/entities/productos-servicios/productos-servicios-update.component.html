@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-productos-servicios-heading" jhiTranslate="newoApp.productosServicios.home.createOrEditLabel">Create or edit a Productos Servicios</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!productosServicios.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="productosServicios.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.productosServicios.nombreProducto" for="field_nombreProducto">Nombre Producto</label>
+                    <input type="text" class="form-control" name="nombreProducto" id="field_nombreProducto"
+                        [(ngModel)]="productosServicios.nombreProducto" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.productosServicios.foto" for="field_foto">Foto</label>
+                    <div>
+                        <img [src]="'data:' + productosServicios.fotoContentType + ';base64,' + productosServicios.foto" style="max-height: 100px;" *ngIf="productosServicios.foto" alt="productosServicios image"/>
+                        <div *ngIf="productosServicios.foto" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{productosServicios.fotoContentType}}, {{byteSize(productosServicios.foto)}}</span>
+                            <button type="button" (click)="clearInputImage('foto', 'fotoContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_foto" (change)="setFileData($event, productosServicios, 'foto', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="foto" id="field_foto"
+                        [(ngModel)]="productosServicios.foto" />
+                    <input type="hidden" class="form-control" name="fotoContentType" id="field_fotoContentType"
+                        [(ngModel)]="productosServicios.fotoContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.productosServicios.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                        [(ngModel)]="productosServicios.descripcion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.productosServicios.inventariables" for="field_inventariables">Inventariables</label>
+                    <input type="number" class="form-control" name="inventariables" id="field_inventariables"
+                        [(ngModel)]="productosServicios.inventariables" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.productosServicios.valor" for="field_valor">Valor</label>
+                    <input type="number" class="form-control" name="valor" id="field_valor"
+                        [(ngModel)]="productosServicios.valor" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.productosServicios.impuesto" for="field_impuesto">Impuesto</label>
+                    <input type="number" class="form-control" name="impuesto" id="field_impuesto"
+                        [(ngModel)]="productosServicios.impuesto" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.productosServicios.perfilEquipoEmpresa" for="field_perfilEquipoEmpresa">Perfil Equipo Empresa</label>
+                    <select class="form-control" id="field_perfilEquipoEmpresa" name="perfilEquipoEmpresa" [(ngModel)]="productosServicios.perfilEquipoEmpresa" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="perfilEquipoEmpresaOption.id === productosServicios.perfilEquipoEmpresa?.id ? productosServicios.perfilEquipoEmpresa : perfilEquipoEmpresaOption" *ngFor="let perfilEquipoEmpresaOption of perfilequipoempresas; trackBy: trackPerfilEquipoEmpresaById">{{perfilEquipoEmpresaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

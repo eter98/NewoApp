@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-entrada-invitados-heading" jhiTranslate="newoApp.entradaInvitados.home.createOrEditLabel">Create or edit a Entrada Invitados</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!entradaInvitados.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="entradaInvitados.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaInvitados.fechaEntrada" for="field_fechaEntrada">Fecha Entrada</label>
+                    <div class="input-group">
+                        <input id="field_fechaEntrada" type="text" class="form-control" name="fechaEntrada" ngbDatepicker  #fechaEntradaDp="ngbDatepicker" [(ngModel)]="entradaInvitados.fechaEntrada"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaEntradaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaInvitados.horaEntrada" for="field_horaEntrada">Hora Entrada</label>
+                    <input type="text" class="form-control" name="horaEntrada" id="field_horaEntrada"
+                        [(ngModel)]="entradaInvitados.horaEntrada" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaInvitados.fechaSalida" for="field_fechaSalida">Fecha Salida</label>
+                    <div class="input-group">
+                        <input id="field_fechaSalida" type="text" class="form-control" name="fechaSalida" ngbDatepicker  #fechaSalidaDp="ngbDatepicker" [(ngModel)]="entradaInvitados.fechaSalida"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaSalidaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaInvitados.horaSalida" for="field_horaSalida">Hora Salida</label>
+                    <input type="text" class="form-control" name="horaSalida" id="field_horaSalida"
+                        [(ngModel)]="entradaInvitados.horaSalida" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaInvitados.espacioLibre" for="field_espacioLibre">Espacio Libre</label>
+                    <select class="form-control" id="field_espacioLibre" name="espacioLibre" [(ngModel)]="entradaInvitados.espacioLibre">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="espacioLibreOption.id === entradaInvitados.espacioLibre?.id ? entradaInvitados.espacioLibre : espacioLibreOption" *ngFor="let espacioLibreOption of espaciolibres; trackBy: trackEspacioLibreById">{{espacioLibreOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaInvitados.invitados" for="field_invitados">Invitados</label>
+                    <select class="form-control" id="field_invitados" name="invitados" [(ngModel)]="entradaInvitados.invitados" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="invitadosOption.id === entradaInvitados.invitados?.id ? entradaInvitados.invitados : invitadosOption" *ngFor="let invitadosOption of invitados; trackBy: trackInvitadosById">{{invitadosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaInvitados.reservas" for="field_reservas">Reservas</label>
+                    <select class="form-control" id="field_reservas" name="reservas" [(ngModel)]="entradaInvitados.reservas" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="reservasOption.id === entradaInvitados.reservas?.id ? entradaInvitados.reservas : reservasOption" *ngFor="let reservasOption of reservas; trackBy: trackReservasById">{{reservasOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

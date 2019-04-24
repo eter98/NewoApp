@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tarifaLanding">
+            <h2><span jhiTranslate="newoApp.tarifaLanding.detail.title">Tarifa Landing</span> {{tarifaLanding.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newoApp.tarifaLanding.tarifaPuestoMes">Tarifa Puesto Mes</span></dt>
+                <dd>
+                    <span>{{tarifaLanding.tarifaPuestoMes}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.tarifaLanding.landing">Landing</span></dt>
+                <dd>
+                    <div *ngIf="tarifaLanding.landing">
+                        <a [routerLink]="['/landing', tarifaLanding.landing?.id, 'view']">{{tarifaLanding.landing?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tarifa-landing', tarifaLanding.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

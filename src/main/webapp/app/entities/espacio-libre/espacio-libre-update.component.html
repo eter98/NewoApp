@@ -1,0 +1,119 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-espacio-libre-heading" jhiTranslate="newoApp.espacioLibre.home.createOrEditLabel">Create or edit a Espacio Libre</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!espacioLibre.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="espacioLibre.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.capacidadInstalada" for="field_capacidadInstalada">Capacidad Instalada</label>
+                    <input type="number" class="form-control" name="capacidadInstalada" id="field_capacidadInstalada"
+                        [(ngModel)]="espacioLibre.capacidadInstalada" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tipoDeEspacios" for="field_tipoDeEspacios">Tipo De Espacios</label>
+                    <input type="number" class="form-control" name="tipoDeEspacios" id="field_tipoDeEspacios"
+                        [(ngModel)]="espacioLibre.tipoDeEspacios" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.wifi" for="field_wifi">Wifi</label>
+                    <input type="text" class="form-control" name="wifi" id="field_wifi"
+                        [(ngModel)]="espacioLibre.wifi" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa1hMiembro" for="field_tarifa1hMiembro">Tarifa 1 H Miembro</label>
+                    <input type="number" class="form-control" name="tarifa1hMiembro" id="field_tarifa1hMiembro"
+                        [(ngModel)]="espacioLibre.tarifa1hMiembro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa2hMiembro" for="field_tarifa2hMiembro">Tarifa 2 H Miembro</label>
+                    <input type="number" class="form-control" name="tarifa2hMiembro" id="field_tarifa2hMiembro"
+                        [(ngModel)]="espacioLibre.tarifa2hMiembro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa3hMiembro" for="field_tarifa3hMiembro">Tarifa 3 H Miembro</label>
+                    <input type="number" class="form-control" name="tarifa3hMiembro" id="field_tarifa3hMiembro"
+                        [(ngModel)]="espacioLibre.tarifa3hMiembro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa4hMiembro" for="field_tarifa4hMiembro">Tarifa 4 H Miembro</label>
+                    <input type="number" class="form-control" name="tarifa4hMiembro" id="field_tarifa4hMiembro"
+                        [(ngModel)]="espacioLibre.tarifa4hMiembro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa5hMiembro" for="field_tarifa5hMiembro">Tarifa 5 H Miembro</label>
+                    <input type="number" class="form-control" name="tarifa5hMiembro" id="field_tarifa5hMiembro"
+                        [(ngModel)]="espacioLibre.tarifa5hMiembro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa6hMiembro" for="field_tarifa6hMiembro">Tarifa 6 H Miembro</label>
+                    <input type="number" class="form-control" name="tarifa6hMiembro" id="field_tarifa6hMiembro"
+                        [(ngModel)]="espacioLibre.tarifa6hMiembro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa7hMiembro" for="field_tarifa7hMiembro">Tarifa 7 H Miembro</label>
+                    <input type="number" class="form-control" name="tarifa7hMiembro" id="field_tarifa7hMiembro"
+                        [(ngModel)]="espacioLibre.tarifa7hMiembro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa8hMiembro" for="field_tarifa8hMiembro">Tarifa 8 H Miembro</label>
+                    <input type="number" class="form-control" name="tarifa8hMiembro" id="field_tarifa8hMiembro"
+                        [(ngModel)]="espacioLibre.tarifa8hMiembro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa1hInvitado" for="field_tarifa1hInvitado">Tarifa 1 H Invitado</label>
+                    <input type="number" class="form-control" name="tarifa1hInvitado" id="field_tarifa1hInvitado"
+                        [(ngModel)]="espacioLibre.tarifa1hInvitado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa2hInvitado" for="field_tarifa2hInvitado">Tarifa 2 H Invitado</label>
+                    <input type="number" class="form-control" name="tarifa2hInvitado" id="field_tarifa2hInvitado"
+                        [(ngModel)]="espacioLibre.tarifa2hInvitado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa3hInvitado" for="field_tarifa3hInvitado">Tarifa 3 H Invitado</label>
+                    <input type="number" class="form-control" name="tarifa3hInvitado" id="field_tarifa3hInvitado"
+                        [(ngModel)]="espacioLibre.tarifa3hInvitado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa4hInvitado" for="field_tarifa4hInvitado">Tarifa 4 H Invitado</label>
+                    <input type="number" class="form-control" name="tarifa4hInvitado" id="field_tarifa4hInvitado"
+                        [(ngModel)]="espacioLibre.tarifa4hInvitado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa5hInvitado" for="field_tarifa5hInvitado">Tarifa 5 H Invitado</label>
+                    <input type="number" class="form-control" name="tarifa5hInvitado" id="field_tarifa5hInvitado"
+                        [(ngModel)]="espacioLibre.tarifa5hInvitado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa6hInvitado" for="field_tarifa6hInvitado">Tarifa 6 H Invitado</label>
+                    <input type="number" class="form-control" name="tarifa6hInvitado" id="field_tarifa6hInvitado"
+                        [(ngModel)]="espacioLibre.tarifa6hInvitado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa7hInvitado" for="field_tarifa7hInvitado">Tarifa 7 H Invitado</label>
+                    <input type="number" class="form-control" name="tarifa7hInvitado" id="field_tarifa7hInvitado"
+                        [(ngModel)]="espacioLibre.tarifa7hInvitado" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.espacioLibre.tarifa8hInvitado" for="field_tarifa8hInvitado">Tarifa 8 H Invitado</label>
+                    <input type="number" class="form-control" name="tarifa8hInvitado" id="field_tarifa8hInvitado"
+                        [(ngModel)]="espacioLibre.tarifa8hInvitado" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

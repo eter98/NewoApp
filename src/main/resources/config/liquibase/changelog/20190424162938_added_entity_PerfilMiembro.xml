@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity PerfilMiembro.
+    -->
+    <changeSet id="20190424162938-1" author="jhipster">
+        <createTable tableName="perfil_miembro">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="biografia" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="foto_1" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="foto_1_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="foto_2" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="foto_2_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fot_3" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="fot_3_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="conocimientos_que_domina" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="temas_de_interes" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="facebook" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="instagram" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="id_google" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="twiter" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

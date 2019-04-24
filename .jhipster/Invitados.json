@@ -1,0 +1,45 @@
+{
+    "name": "Invitados",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "apellido",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "correo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "entradaInvitados",
+            "otherEntityRelationshipName": "invitados",
+            "relationshipName": "entradaInvitados"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "miembros",
+            "otherEntityRelationshipName": "invitados",
+            "relationshipName": "miembros",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190424162940",
+    "entityTableName": "invitados",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

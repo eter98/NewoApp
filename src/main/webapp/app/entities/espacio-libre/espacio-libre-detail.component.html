@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="espacioLibre">
+            <h2><span jhiTranslate="newoApp.espacioLibre.detail.title">Espacio Libre</span> {{espacioLibre.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newoApp.espacioLibre.capacidadInstalada">Capacidad Instalada</span></dt>
+                <dd>
+                    <span>{{espacioLibre.capacidadInstalada}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tipoDeEspacios">Tipo De Espacios</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tipoDeEspacios}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.wifi">Wifi</span></dt>
+                <dd>
+                    <span>{{espacioLibre.wifi}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa1hMiembro">Tarifa 1 H Miembro</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa1hMiembro}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa2hMiembro">Tarifa 2 H Miembro</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa2hMiembro}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa3hMiembro">Tarifa 3 H Miembro</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa3hMiembro}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa4hMiembro">Tarifa 4 H Miembro</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa4hMiembro}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa5hMiembro">Tarifa 5 H Miembro</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa5hMiembro}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa6hMiembro">Tarifa 6 H Miembro</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa6hMiembro}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa7hMiembro">Tarifa 7 H Miembro</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa7hMiembro}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa8hMiembro">Tarifa 8 H Miembro</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa8hMiembro}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa1hInvitado">Tarifa 1 H Invitado</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa1hInvitado}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa2hInvitado">Tarifa 2 H Invitado</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa2hInvitado}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa3hInvitado">Tarifa 3 H Invitado</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa3hInvitado}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa4hInvitado">Tarifa 4 H Invitado</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa4hInvitado}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa5hInvitado">Tarifa 5 H Invitado</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa5hInvitado}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa6hInvitado">Tarifa 6 H Invitado</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa6hInvitado}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa7hInvitado">Tarifa 7 H Invitado</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa7hInvitado}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.espacioLibre.tarifa8hInvitado">Tarifa 8 H Invitado</span></dt>
+                <dd>
+                    <span>{{espacioLibre.tarifa8hInvitado}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/espacio-libre', espacioLibre.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

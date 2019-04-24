@@ -1,0 +1,23 @@
+{
+    "newoApp": {
+        "pais": {
+            "home": {
+                "title": "Pais",
+                "createLabel": "Criar novo Pais",
+                "createOrEditLabel": "Criar ou editar Pais",
+                "search": "Pesquisar por Pais"
+            },
+            "created": "Um novo Pais foi criado com o identificador {{ param }}",
+            "updated": "Um Pais foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Pais foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Pais {{ id }}?"
+            },
+            "detail": {
+                "title": "Pais"
+            },
+            "nombrePais": "Nombre Pais",
+            "ciudad": "Ciudad"
+        }
+    }
+}

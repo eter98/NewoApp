@@ -1,0 +1,37 @@
+{
+    "newoApp": {
+        "espaciosReserva": {
+            "home": {
+                "title": "Espacios Reservas",
+                "createLabel": "Crear nuevo Espacios Reserva",
+                "createOrEditLabel": "Crear o editar Espacios Reserva",
+                "search": "Search for Espacios Reserva"
+            },
+            "created": "Un nuevo Espacios Reserva ha sido creado con el identificador {{ param }}",
+            "updated": "Un Espacios Reserva ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Espacios Reserva ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Espacios Reserva {{ id }}?"
+            },
+            "detail": {
+                "title": "Espacios Reserva"
+            },
+            "nombre": "Nombre",
+            "descripcion": "Descripcion",
+            "facilidades": "Facilidades",
+            "capacidad": "Capacidad",
+            "tarifa1Hora": "Tarifa 1 Hora",
+            "tarifa2Hora": "Tarifa 2 Hora",
+            "tarifa3Hora": "Tarifa 3 Hora",
+            "tarifa4Hora": "Tarifa 4 Hora",
+            "tarifa5Hora": "Tarifa 5 Hora",
+            "tarifa6Hora": "Tarifa 6 Hora",
+            "tarifa7Hora": "Tarifa 7 Hora",
+            "tarifa8Hora": "Tarifa 8 Hora",
+            "horario": "Horario",
+            "wifi": "Wifi",
+            "sedes": "Sedes",
+            "reservas": "Reservas"
+        }
+    }
+}

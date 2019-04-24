@@ -1,0 +1,53 @@
+{
+    "name": "RegistroCompra",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "miembros",
+            "otherEntityRelationshipName": "registroCompra",
+            "relationshipName": "miembros",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "espacioLibre",
+            "otherEntityRelationshipName": "registroCompra",
+            "relationshipName": "espacioLibre",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "entradaInvitados",
+            "otherEntityRelationshipName": "registroCompra",
+            "relationshipName": "entradaInvitados",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "facturacion",
+            "otherEntityRelationshipName": "registroCompra",
+            "relationshipName": "facturacion",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "reservas",
+            "otherEntityRelationshipName": "registroCompra",
+            "relationshipName": "reservas",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190424162947",
+    "entityTableName": "registro_compra",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,41 @@
+{
+    "newoApp": {
+        "miembros": {
+            "home": {
+                "title": "Miembros",
+                "createLabel": "Crear nuevo Miembros",
+                "createOrEditLabel": "Crear o editar Miembros",
+                "search": "Search for Miembros"
+            },
+            "created": "Un nuevo Miembros ha sido creado con el identificador {{ param }}",
+            "updated": "Un Miembros ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Miembros ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Miembros {{ id }}?"
+            },
+            "detail": {
+                "title": "Miembros"
+            },
+            "nombre": "Nombre",
+            "apellido": "Apellido",
+            "nacionalidad": "Nacionalidad",
+            "fevhaNacimiento": "Fevha Nacimiento",
+            "fechaRegistro": "Fecha Registro",
+            "genero": "Genero",
+            "correoElectronico": "Correo Electronico",
+            "celular": "Celular",
+            "idEquipoEmprearial": "Id Equipo Emprearial",
+            "idSede": "Id Sede",
+            "derechosDeCompra": "Derechos De Compra",
+            "tipoAcceso": "Tipo Acceso",
+            "perfilMiembro": "Perfil Miembro",
+            "espacioLibre": "Espacio Libre",
+            "hostSede": "Host Sede",
+            "entradaMiembros": "Entrada Miembros",
+            "invitados": "Invitados",
+            "reservas": "Reservas",
+            "registroCompra": "Registro Compra",
+            "equipoEmpresas": "Equipo Empresas"
+        }
+    }
+}
