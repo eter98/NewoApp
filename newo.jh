@@ -1,0 +1,230 @@
+entity Miembros {
+    nombre String,
+    apellido String,
+    nacionalidad String,
+    fevhaNacimiento LocalDate,
+    fechaRegistro LocalDate,
+    genero String,
+    correoElectronico String,
+    celular String,
+    idEquipoEmprearial Integer,
+    idSede Integer
+    derechosDeCompra Integer,
+    tipoAcceso Integer
+}
+
+entity PerfilMiembro {
+	biografia TextBlob,
+    foto1 ImageBlob,
+    foto2 ImageBlob,
+    fot3 ImageBlob,
+    conocimientosQueDomina String,
+    temasDeInteres String,
+    facebook String,
+    instagram String,
+    idGoogle String,
+    twiter String
+}
+
+relationship OneToOne {
+	Miembros to PerfilMiembro,
+    Sedes to EspacioLibre,
+    Sedes to EspaciosReserva,
+    Sedes to Landing,
+    Miembros to EspacioLibre,
+    EntradaInvitados to EspacioLibre,
+    EntradaMiembros to Sedes,
+    Miembros to HostSede,
+    Reservas to EspaciosReserva,
+    RegistroCompra to Miembros,
+    RegistroCompra to EspacioLibre,
+    RegistroCompra to EntradaInvitados,
+    EquipoEmpresas to Miembros,
+    EquipoEmpresas to Facturacion,
+    EquipoEmpresas to PerfilEquipoEmpresa,
+    Facturacion to Empresa,
+    Sedes to Ciudad
+}
+
+relationship OneToMany {
+	Miembros to EntradaMiembros,
+    Miembros to Invitados,
+    Invitados to EntradaInvitados,
+    Sedes to HostSede,
+    Miembros to Reservas,
+    Reservas to EntradaInvitados,
+    Facturacion to RegistroCompra,
+    Facturacion to CuentaAsociada,
+    EquipoEmpresas to Landing,
+    Facturacion to Beneficio,
+    PerfilEquipoEmpresa to ProductosServicios
+    Reservas to RegistroCompra,
+    Landing to TarifaLanding,
+    Pais to Ciudad
+}
+
+
+entity EntradaMiembros {
+	fechaEntrada LocalDate,
+    fechaSalida LocalDate
+}
+
+entity Invitados {
+	nombre String,
+    apellido String,
+    correo String,
+    telefono String
+}
+entity EntradaInvitados {
+    fechaEntrada LocalDate,
+    horaEntrada String,
+    fechaSalida LocalDate,
+    horaSalida String
+}
+
+entity Sedes {
+	nombreSede Integer,
+    coordenadaX Double,
+    coordenadaY Double,
+    direccion String,
+    telefonoComunidad String,
+    telefonoNegocio String,
+    capacidadEspacioLibre Integer,
+    descripcionSede TextBlob,
+    horario String,
+    imagen1 ImageBlob,
+    imagen2 ImageBlob
+}
+
+entity EspacioLibre {
+    capacidadInstalada Integer,
+    tipoDeEspacios Integer,
+    wifi String
+    tarifa1hMiembro Integer,
+    tarifa2hMiembro Integer,
+    tarifa3hMiembro Integer,
+    tarifa4hMiembro Integer,
+    tarifa5hMiembro Integer,
+    tarifa6hMiembro Integer,
+    tarifa7hMiembro Integer,
+    tarifa8hMiembro Integer,
+    tarifa1hInvitado Integer,
+    tarifa2hInvitado Integer,
+    tarifa3hInvitado Integer,
+    tarifa4hInvitado Integer,
+    tarifa5hInvitado Integer,
+    tarifa6hInvitado Integer,
+    tarifa7hInvitado Integer,
+    tarifa8hInvitado Integer,
+}
+
+entity HostSede {
+	nombre String,
+}
+
+entity Reservas {
+	fechaEntrada LocalDate,
+    horaEntrada String,
+    fechaSalida LocalDate,
+    horaSalida String
+}
+
+entity EspaciosReserva {
+	nombre String,
+    descripcion String,
+    facilidades String,
+    capacidad Integer,
+    tarifa1Hora Integer,
+    tarifa2Hora Integer,
+    tarifa3Hora Integer,
+    tarifa4Hora Integer,
+    tarifa5Hora Integer,
+    tarifa6Hora Integer,
+    tarifa7Hora Integer,
+    tarifa8Hora Integer,
+    horario String,
+    wifi String
+    
+}
+
+entity RegistroCompra {
+	
+}
+
+entity Facturacion {
+	titularFactura String,
+    tipoPersona Integer,
+    periodicidadFacturacion Integer,
+    maximoMonto Integer
+}
+
+entity EquipoEmpresas {
+	nombre String,
+    telefono String,
+    correo String,
+    direccion String,
+    descripcion TextBlob,
+    logos ImageBlob,
+    paginaWeb String
+}
+
+entity CuentaAsociada {
+	identificaciontitular String,
+    correoTitular String,
+    nombreTitular String,
+    apellidoTitular String,
+    numeroCuenta String,
+    tipoCuenta String,
+    codigoSeguridad String,
+    fechaVencimiento LocalDate
+}
+
+entity Beneficio {
+	tipoBeneficio String,
+    descuento Integer
+}
+
+entity PerfilEquipoEmpresa {
+    nombre String,
+    descripcion String,
+    inventariable Integer,
+    valor Integer,
+    impuesto Integer
+}
+
+entity Empresa {
+	razonSocial String,
+    nit String,
+    direccion String,
+    telefono String,
+    correo String,
+    celular String
+}
+entity Landing {
+    descripcion String,
+    telefonoNegocio String,
+    numeroPuestos Integer,
+    numeroOficinas Integer,
+}
+
+entity TarifaLanding {
+	tarifaPuestoMes Integer,
+    
+}
+
+entity ProductosServicios {
+	nombreProducto String,
+    foto ImageBlob,
+    descripcion String,
+    inventariables Integer,
+    valor Integer,
+    impuesto Integer
+}
+
+entity Pais {
+ 	nombrePais String
+}
+
+entity Ciudad {
+	nombreCiudad String
+}
