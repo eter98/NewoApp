@@ -1,0 +1,102 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="newoApp.perfilMiembro.home.title">Perfil Miembros</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-perfil-miembro" [routerLink]="['/perfil-miembro/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="newoApp.perfilMiembro.home.createLabel">
+            Create new Perfil Miembro
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'newoApp.perfilMiembro.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="perfilMiembros">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="newoApp.perfilMiembro.biografia">Biografia</span></th>
+            <th><span jhiTranslate="newoApp.perfilMiembro.foto1">Foto 1</span></th>
+            <th><span jhiTranslate="newoApp.perfilMiembro.foto2">Foto 2</span></th>
+            <th><span jhiTranslate="newoApp.perfilMiembro.fot3">Fot 3</span></th>
+            <th><span jhiTranslate="newoApp.perfilMiembro.conocimientosQueDomina">Conocimientos Que Domina</span></th>
+            <th><span jhiTranslate="newoApp.perfilMiembro.temasDeInteres">Temas De Interes</span></th>
+            <th><span jhiTranslate="newoApp.perfilMiembro.facebook">Facebook</span></th>
+            <th><span jhiTranslate="newoApp.perfilMiembro.instagram">Instagram</span></th>
+            <th><span jhiTranslate="newoApp.perfilMiembro.idGoogle">Id Google</span></th>
+            <th><span jhiTranslate="newoApp.perfilMiembro.twiter">Twiter</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let perfilMiembro of perfilMiembros ;trackBy: trackId">
+                <td><a [routerLink]="['/perfil-miembro', perfilMiembro.id, 'view' ]">{{perfilMiembro.id}}</a></td>
+                <td>{{perfilMiembro.biografia}}</td>
+                <td>
+                    <a *ngIf="perfilMiembro.foto1" (click)="openFile(perfilMiembro.foto1ContentType, perfilMiembro.foto1)">
+                        <img [src]="'data:' + perfilMiembro.foto1ContentType + ';base64,' + perfilMiembro.foto1" style="max-height: 30px;" alt="perfilMiembro image"/>
+                    </a>
+                    <span *ngIf="perfilMiembro.foto1">{{perfilMiembro.foto1ContentType}}, {{byteSize(perfilMiembro.foto1)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="perfilMiembro.foto2" (click)="openFile(perfilMiembro.foto2ContentType, perfilMiembro.foto2)">
+                        <img [src]="'data:' + perfilMiembro.foto2ContentType + ';base64,' + perfilMiembro.foto2" style="max-height: 30px;" alt="perfilMiembro image"/>
+                    </a>
+                    <span *ngIf="perfilMiembro.foto2">{{perfilMiembro.foto2ContentType}}, {{byteSize(perfilMiembro.foto2)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="perfilMiembro.fot3" (click)="openFile(perfilMiembro.fot3ContentType, perfilMiembro.fot3)">
+                        <img [src]="'data:' + perfilMiembro.fot3ContentType + ';base64,' + perfilMiembro.fot3" style="max-height: 30px;" alt="perfilMiembro image"/>
+                    </a>
+                    <span *ngIf="perfilMiembro.fot3">{{perfilMiembro.fot3ContentType}}, {{byteSize(perfilMiembro.fot3)}}</span>
+                </td>
+                <td>{{perfilMiembro.conocimientosQueDomina}}</td>
+                <td>{{perfilMiembro.temasDeInteres}}</td>
+                <td>{{perfilMiembro.facebook}}</td>
+                <td>{{perfilMiembro.instagram}}</td>
+                <td>{{perfilMiembro.idGoogle}}</td>
+                <td>{{perfilMiembro.twiter}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/perfil-miembro', perfilMiembro.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/perfil-miembro', perfilMiembro.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'perfil-miembro', { outlets: { popup: perfilMiembro.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

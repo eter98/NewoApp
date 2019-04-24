@@ -1,0 +1,67 @@
+{
+    "name": "PerfilMiembro",
+    "fields": [
+        {
+            "fieldName": "biografia",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "foto1",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "foto2",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "fot3",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "conocimientosQueDomina",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "temasDeInteres",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "facebook",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "instagram",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idGoogle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "twiter",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "miembros",
+            "otherEntityRelationshipName": "perfilMiembro",
+            "relationshipName": "miembros",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190424162938",
+    "entityTableName": "perfil_miembro",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

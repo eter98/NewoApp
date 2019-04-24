@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="registroCompra">
+            <h2><span jhiTranslate="newoApp.registroCompra.detail.title">Registro Compra</span> {{registroCompra.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newoApp.registroCompra.miembros">Miembros</span></dt>
+                <dd>
+                    <div *ngIf="registroCompra.miembros">
+                        <a [routerLink]="['/miembros', registroCompra.miembros?.id, 'view']">{{registroCompra.miembros?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.registroCompra.espacioLibre">Espacio Libre</span></dt>
+                <dd>
+                    <div *ngIf="registroCompra.espacioLibre">
+                        <a [routerLink]="['/espacio-libre', registroCompra.espacioLibre?.id, 'view']">{{registroCompra.espacioLibre?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.registroCompra.entradaInvitados">Entrada Invitados</span></dt>
+                <dd>
+                    <div *ngIf="registroCompra.entradaInvitados">
+                        <a [routerLink]="['/entrada-invitados', registroCompra.entradaInvitados?.id, 'view']">{{registroCompra.entradaInvitados?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.registroCompra.facturacion">Facturacion</span></dt>
+                <dd>
+                    <div *ngIf="registroCompra.facturacion">
+                        <a [routerLink]="['/facturacion', registroCompra.facturacion?.id, 'view']">{{registroCompra.facturacion?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.registroCompra.reservas">Reservas</span></dt>
+                <dd>
+                    <div *ngIf="registroCompra.reservas">
+                        <a [routerLink]="['/reservas', registroCompra.reservas?.id, 'view']">{{registroCompra.reservas?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/registro-compra', registroCompra.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

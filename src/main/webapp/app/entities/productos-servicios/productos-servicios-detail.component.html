@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productosServicios">
+            <h2><span jhiTranslate="newoApp.productosServicios.detail.title">Productos Servicios</span> {{productosServicios.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newoApp.productosServicios.nombreProducto">Nombre Producto</span></dt>
+                <dd>
+                    <span>{{productosServicios.nombreProducto}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.productosServicios.foto">Foto</span></dt>
+                <dd>
+                    <div *ngIf="productosServicios.foto">
+                        <a (click)="openFile(productosServicios.fotoContentType, productosServicios.foto)">
+                            <img [src]="'data:' + productosServicios.fotoContentType + ';base64,' + productosServicios.foto" style="max-width: 100%;" alt="productosServicios image"/>
+                        </a>
+                        {{productosServicios.fotoContentType}}, {{byteSize(productosServicios.foto)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.productosServicios.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{productosServicios.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.productosServicios.inventariables">Inventariables</span></dt>
+                <dd>
+                    <span>{{productosServicios.inventariables}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.productosServicios.valor">Valor</span></dt>
+                <dd>
+                    <span>{{productosServicios.valor}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.productosServicios.impuesto">Impuesto</span></dt>
+                <dd>
+                    <span>{{productosServicios.impuesto}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.productosServicios.perfilEquipoEmpresa">Perfil Equipo Empresa</span></dt>
+                <dd>
+                    <div *ngIf="productosServicios.perfilEquipoEmpresa">
+                        <a [routerLink]="['/perfil-equipo-empresa', productosServicios.perfilEquipoEmpresa?.id, 'view']">{{productosServicios.perfilEquipoEmpresa?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/productos-servicios', productosServicios.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

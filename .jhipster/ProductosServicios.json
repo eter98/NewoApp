@@ -1,0 +1,48 @@
+{
+    "name": "ProductosServicios",
+    "fields": [
+        {
+            "fieldName": "nombreProducto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "foto",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inventariables",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "impuesto",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "perfilEquipoEmpresa",
+            "otherEntityRelationshipName": "productosServicios",
+            "relationshipName": "perfilEquipoEmpresa",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190424162956",
+    "entityTableName": "productos_servicios",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

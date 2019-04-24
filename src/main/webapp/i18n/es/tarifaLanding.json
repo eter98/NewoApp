@@ -1,0 +1,23 @@
+{
+    "newoApp": {
+        "tarifaLanding": {
+            "home": {
+                "title": "Tarifa Landings",
+                "createLabel": "Crear nuevo Tarifa Landing",
+                "createOrEditLabel": "Crear o editar Tarifa Landing",
+                "search": "Search for Tarifa Landing"
+            },
+            "created": "Un nuevo Tarifa Landing ha sido creado con el identificador {{ param }}",
+            "updated": "Un Tarifa Landing ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Tarifa Landing ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Tarifa Landing {{ id }}?"
+            },
+            "detail": {
+                "title": "Tarifa Landing"
+            },
+            "tarifaPuestoMes": "Tarifa Puesto Mes",
+            "landing": "Landing"
+        }
+    }
+}

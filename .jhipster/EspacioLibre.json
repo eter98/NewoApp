@@ -1,0 +1,120 @@
+{
+    "name": "EspacioLibre",
+    "fields": [
+        {
+            "fieldName": "capacidadInstalada",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tipoDeEspacios",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "wifi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tarifa1hMiembro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa2hMiembro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa3hMiembro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa4hMiembro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa5hMiembro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa6hMiembro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa7hMiembro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa8hMiembro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa1hInvitado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa2hInvitado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa3hInvitado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa4hInvitado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa5hInvitado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa6hInvitado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa7hInvitado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifa8hInvitado",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "sedes",
+            "otherEntityRelationshipName": "espacioLibre",
+            "relationshipName": "sedes",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "miembros",
+            "otherEntityRelationshipName": "espacioLibre",
+            "relationshipName": "miembros",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "entradaInvitados",
+            "otherEntityRelationshipName": "espacioLibre",
+            "relationshipName": "entradaInvitados",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "registroCompra",
+            "otherEntityRelationshipName": "espacioLibre",
+            "relationshipName": "registroCompra",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190424162943",
+    "entityTableName": "espacio_libre",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

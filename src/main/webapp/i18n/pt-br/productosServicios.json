@@ -1,0 +1,28 @@
+{
+    "newoApp": {
+        "productosServicios": {
+            "home": {
+                "title": "Productos Servicios",
+                "createLabel": "Criar novo Productos Servicios",
+                "createOrEditLabel": "Criar ou editar Productos Servicios",
+                "search": "Pesquisar por Productos Servicios"
+            },
+            "created": "Um novo Productos Servicios foi criado com o identificador {{ param }}",
+            "updated": "Um Productos Servicios foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Productos Servicios foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Productos Servicios {{ id }}?"
+            },
+            "detail": {
+                "title": "Productos Servicios"
+            },
+            "nombreProducto": "Nombre Producto",
+            "foto": "Foto",
+            "descripcion": "Descripcion",
+            "inventariables": "Inventariables",
+            "valor": "Valor",
+            "impuesto": "Impuesto",
+            "perfilEquipoEmpresa": "Perfil Equipo Empresa"
+        }
+    }
+}

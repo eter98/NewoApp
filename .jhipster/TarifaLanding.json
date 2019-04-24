@@ -1,0 +1,27 @@
+{
+    "name": "TarifaLanding",
+    "fields": [
+        {
+            "fieldName": "tarifaPuestoMes",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "landing",
+            "otherEntityRelationshipName": "tarifaLanding",
+            "relationshipName": "landing",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190424162955",
+    "entityTableName": "tarifa_landing",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

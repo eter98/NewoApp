@@ -1,0 +1,76 @@
+{
+    "name": "EquipoEmpresas",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "correo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "logos",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "paginaWeb",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "miembros",
+            "otherEntityRelationshipName": "equipoEmpresas",
+            "relationshipName": "miembros",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "facturacion",
+            "otherEntityRelationshipName": "equipoEmpresas",
+            "relationshipName": "facturacion",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "perfilEquipoEmpresa",
+            "otherEntityRelationshipName": "equipoEmpresas",
+            "relationshipName": "perfilEquipoEmpresa",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "landing",
+            "otherEntityRelationshipName": "equipoEmpresas",
+            "relationshipName": "landing"
+        }
+    ],
+    "changelogDate": "20190424162949",
+    "entityTableName": "equipo_empresas",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

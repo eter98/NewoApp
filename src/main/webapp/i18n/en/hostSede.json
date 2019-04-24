@@ -1,0 +1,24 @@
+{
+    "newoApp": {
+        "hostSede": {
+            "home": {
+                "title": "Host Sedes",
+                "createLabel": "Create a new Host Sede",
+                "createOrEditLabel": "Create or edit a Host Sede",
+                "search": "Search for Host Sede"
+            },
+            "created": "A new Host Sede is created with identifier {{ param }}",
+            "updated": "A Host Sede is updated with identifier {{ param }}",
+            "deleted": "A Host Sede is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Host Sede {{ id }}?"
+            },
+            "detail": {
+                "title": "Host Sede"
+            },
+            "nombre": "Nombre",
+            "miembros": "Miembros",
+            "sedes": "Sedes"
+        }
+    }
+}

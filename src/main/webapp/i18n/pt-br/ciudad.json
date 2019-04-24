@@ -1,0 +1,24 @@
+{
+    "newoApp": {
+        "ciudad": {
+            "home": {
+                "title": "Ciudads",
+                "createLabel": "Criar novo Ciudad",
+                "createOrEditLabel": "Criar ou editar Ciudad",
+                "search": "Pesquisar por Ciudad"
+            },
+            "created": "Um novo Ciudad foi criado com o identificador {{ param }}",
+            "updated": "Um Ciudad foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Ciudad foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Ciudad {{ id }}?"
+            },
+            "detail": {
+                "title": "Ciudad"
+            },
+            "nombreCiudad": "Nombre Ciudad",
+            "sedes": "Sedes",
+            "pais": "Pais"
+        }
+    }
+}

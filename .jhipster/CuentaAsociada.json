@@ -1,0 +1,55 @@
+{
+    "name": "CuentaAsociada",
+    "fields": [
+        {
+            "fieldName": "identificaciontitular",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "correoTitular",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombreTitular",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "apellidoTitular",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroCuenta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipoCuenta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigoSeguridad",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechaVencimiento",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "facturacion",
+            "otherEntityRelationshipName": "cuentaAsociada",
+            "relationshipName": "facturacion",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190424162950",
+    "entityTableName": "cuenta_asociada",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="miembros">
+            <h2><span jhiTranslate="newoApp.miembros.detail.title">Miembros</span> {{miembros.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newoApp.miembros.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{miembros.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.apellido">Apellido</span></dt>
+                <dd>
+                    <span>{{miembros.apellido}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.nacionalidad">Nacionalidad</span></dt>
+                <dd>
+                    <span>{{miembros.nacionalidad}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.fevhaNacimiento">Fevha Nacimiento</span></dt>
+                <dd>
+                    <span>{{miembros.fevhaNacimiento}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.fechaRegistro">Fecha Registro</span></dt>
+                <dd>
+                    <span>{{miembros.fechaRegistro}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.genero">Genero</span></dt>
+                <dd>
+                    <span>{{miembros.genero}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.correoElectronico">Correo Electronico</span></dt>
+                <dd>
+                    <span>{{miembros.correoElectronico}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.celular">Celular</span></dt>
+                <dd>
+                    <span>{{miembros.celular}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.idEquipoEmprearial">Id Equipo Emprearial</span></dt>
+                <dd>
+                    <span>{{miembros.idEquipoEmprearial}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.idSede">Id Sede</span></dt>
+                <dd>
+                    <span>{{miembros.idSede}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.derechosDeCompra">Derechos De Compra</span></dt>
+                <dd>
+                    <span>{{miembros.derechosDeCompra}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.tipoAcceso">Tipo Acceso</span></dt>
+                <dd>
+                    <span>{{miembros.tipoAcceso}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.perfilMiembro">Perfil Miembro</span></dt>
+                <dd>
+                    <div *ngIf="miembros.perfilMiembro">
+                        <a [routerLink]="['/perfil-miembro', miembros.perfilMiembro?.id, 'view']">{{miembros.perfilMiembro?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.espacioLibre">Espacio Libre</span></dt>
+                <dd>
+                    <div *ngIf="miembros.espacioLibre">
+                        <a [routerLink]="['/espacio-libre', miembros.espacioLibre?.id, 'view']">{{miembros.espacioLibre?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.miembros.hostSede">Host Sede</span></dt>
+                <dd>
+                    <div *ngIf="miembros.hostSede">
+                        <a [routerLink]="['/host-sede', miembros.hostSede?.id, 'view']">{{miembros.hostSede?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/miembros', miembros.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

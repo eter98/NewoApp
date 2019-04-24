@@ -1,0 +1,25 @@
+{
+    "newoApp": {
+        "entradaMiembros": {
+            "home": {
+                "title": "Entrada Miembros",
+                "createLabel": "Criar novo Entrada Miembros",
+                "createOrEditLabel": "Criar ou editar Entrada Miembros",
+                "search": "Pesquisar por Entrada Miembros"
+            },
+            "created": "Um novo Entrada Miembros foi criado com o identificador {{ param }}",
+            "updated": "Um Entrada Miembros foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Entrada Miembros foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Entrada Miembros {{ id }}?"
+            },
+            "detail": {
+                "title": "Entrada Miembros"
+            },
+            "fechaEntrada": "Fecha Entrada",
+            "fechaSalida": "Fecha Salida",
+            "sedes": "Sedes",
+            "miembros": "Miembros"
+        }
+    }
+}

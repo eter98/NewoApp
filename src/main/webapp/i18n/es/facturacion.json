@@ -1,0 +1,30 @@
+{
+    "newoApp": {
+        "facturacion": {
+            "home": {
+                "title": "Facturacions",
+                "createLabel": "Crear nuevo Facturacion",
+                "createOrEditLabel": "Crear o editar Facturacion",
+                "search": "Search for Facturacion"
+            },
+            "created": "Un nuevo Facturacion ha sido creado con el identificador {{ param }}",
+            "updated": "Un Facturacion ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Facturacion ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Facturacion {{ id }}?"
+            },
+            "detail": {
+                "title": "Facturacion"
+            },
+            "titularFactura": "Titular Factura",
+            "tipoPersona": "Tipo Persona",
+            "periodicidadFacturacion": "Periodicidad Facturacion",
+            "maximoMonto": "Maximo Monto",
+            "empresa": "Empresa",
+            "registroCompra": "Registro Compra",
+            "cuentaAsociada": "Cuenta Asociada",
+            "beneficio": "Beneficio",
+            "equipoEmpresas": "Equipo Empresas"
+        }
+    }
+}

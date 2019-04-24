@@ -1,0 +1,61 @@
+{
+    "name": "EntradaInvitados",
+    "fields": [
+        {
+            "fieldName": "fechaEntrada",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "horaEntrada",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechaSalida",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "horaSalida",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "espacioLibre",
+            "otherEntityRelationshipName": "entradaInvitados",
+            "relationshipName": "espacioLibre",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "registroCompra",
+            "otherEntityRelationshipName": "entradaInvitados",
+            "relationshipName": "registroCompra",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "invitados",
+            "otherEntityRelationshipName": "entradaInvitados",
+            "relationshipName": "invitados",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "reservas",
+            "otherEntityRelationshipName": "entradaInvitados",
+            "relationshipName": "reservas",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190424162941",
+    "entityTableName": "entrada_invitados",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

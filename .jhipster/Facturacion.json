@@ -1,0 +1,65 @@
+{
+    "name": "Facturacion",
+    "fields": [
+        {
+            "fieldName": "titularFactura",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipoPersona",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "periodicidadFacturacion",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maximoMonto",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "empresa",
+            "otherEntityRelationshipName": "facturacion",
+            "relationshipName": "empresa",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "registroCompra",
+            "otherEntityRelationshipName": "facturacion",
+            "relationshipName": "registroCompra"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "cuentaAsociada",
+            "otherEntityRelationshipName": "facturacion",
+            "relationshipName": "cuentaAsociada"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "beneficio",
+            "otherEntityRelationshipName": "facturacion",
+            "relationshipName": "beneficio"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "equipoEmpresas",
+            "otherEntityRelationshipName": "facturacion",
+            "relationshipName": "equipoEmpresas",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190424162948",
+    "entityTableName": "facturacion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

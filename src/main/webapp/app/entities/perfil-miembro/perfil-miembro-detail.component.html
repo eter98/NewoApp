@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="perfilMiembro">
+            <h2><span jhiTranslate="newoApp.perfilMiembro.detail.title">Perfil Miembro</span> {{perfilMiembro.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newoApp.perfilMiembro.biografia">Biografia</span></dt>
+                <dd>
+                    <span>{{perfilMiembro.biografia}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.perfilMiembro.foto1">Foto 1</span></dt>
+                <dd>
+                    <div *ngIf="perfilMiembro.foto1">
+                        <a (click)="openFile(perfilMiembro.foto1ContentType, perfilMiembro.foto1)">
+                            <img [src]="'data:' + perfilMiembro.foto1ContentType + ';base64,' + perfilMiembro.foto1" style="max-width: 100%;" alt="perfilMiembro image"/>
+                        </a>
+                        {{perfilMiembro.foto1ContentType}}, {{byteSize(perfilMiembro.foto1)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.perfilMiembro.foto2">Foto 2</span></dt>
+                <dd>
+                    <div *ngIf="perfilMiembro.foto2">
+                        <a (click)="openFile(perfilMiembro.foto2ContentType, perfilMiembro.foto2)">
+                            <img [src]="'data:' + perfilMiembro.foto2ContentType + ';base64,' + perfilMiembro.foto2" style="max-width: 100%;" alt="perfilMiembro image"/>
+                        </a>
+                        {{perfilMiembro.foto2ContentType}}, {{byteSize(perfilMiembro.foto2)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.perfilMiembro.fot3">Fot 3</span></dt>
+                <dd>
+                    <div *ngIf="perfilMiembro.fot3">
+                        <a (click)="openFile(perfilMiembro.fot3ContentType, perfilMiembro.fot3)">
+                            <img [src]="'data:' + perfilMiembro.fot3ContentType + ';base64,' + perfilMiembro.fot3" style="max-width: 100%;" alt="perfilMiembro image"/>
+                        </a>
+                        {{perfilMiembro.fot3ContentType}}, {{byteSize(perfilMiembro.fot3)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.perfilMiembro.conocimientosQueDomina">Conocimientos Que Domina</span></dt>
+                <dd>
+                    <span>{{perfilMiembro.conocimientosQueDomina}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.perfilMiembro.temasDeInteres">Temas De Interes</span></dt>
+                <dd>
+                    <span>{{perfilMiembro.temasDeInteres}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.perfilMiembro.facebook">Facebook</span></dt>
+                <dd>
+                    <span>{{perfilMiembro.facebook}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.perfilMiembro.instagram">Instagram</span></dt>
+                <dd>
+                    <span>{{perfilMiembro.instagram}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.perfilMiembro.idGoogle">Id Google</span></dt>
+                <dd>
+                    <span>{{perfilMiembro.idGoogle}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.perfilMiembro.twiter">Twiter</span></dt>
+                <dd>
+                    <span>{{perfilMiembro.twiter}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/perfil-miembro', perfilMiembro.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{
+    "newoApp": {
+        "perfilMiembro": {
+            "home": {
+                "title": "Perfil Miembros",
+                "createLabel": "Create a new Perfil Miembro",
+                "createOrEditLabel": "Create or edit a Perfil Miembro",
+                "search": "Search for Perfil Miembro"
+            },
+            "created": "A new Perfil Miembro is created with identifier {{ param }}",
+            "updated": "A Perfil Miembro is updated with identifier {{ param }}",
+            "deleted": "A Perfil Miembro is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Perfil Miembro {{ id }}?"
+            },
+            "detail": {
+                "title": "Perfil Miembro"
+            },
+            "biografia": "Biografia",
+            "foto1": "Foto 1",
+            "foto2": "Foto 2",
+            "fot3": "Fot 3",
+            "conocimientosQueDomina": "Conocimientos Que Domina",
+            "temasDeInteres": "Temas De Interes",
+            "facebook": "Facebook",
+            "instagram": "Instagram",
+            "idGoogle": "Id Google",
+            "twiter": "Twiter",
+            "miembros": "Miembros"
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "name": "EntradaMiembros",
+    "fields": [
+        {
+            "fieldName": "fechaEntrada",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fechaSalida",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "sedes",
+            "otherEntityRelationshipName": "entradaMiembros",
+            "relationshipName": "sedes",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "miembros",
+            "otherEntityRelationshipName": "entradaMiembros",
+            "relationshipName": "miembros",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190424162939",
+    "entityTableName": "entrada_miembros",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

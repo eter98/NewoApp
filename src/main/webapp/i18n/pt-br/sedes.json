@@ -1,0 +1,38 @@
+{
+    "newoApp": {
+        "sedes": {
+            "home": {
+                "title": "Sedes",
+                "createLabel": "Criar novo Sedes",
+                "createOrEditLabel": "Criar ou editar Sedes",
+                "search": "Pesquisar por Sedes"
+            },
+            "created": "Um novo Sedes foi criado com o identificador {{ param }}",
+            "updated": "Um Sedes foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Sedes foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Sedes {{ id }}?"
+            },
+            "detail": {
+                "title": "Sedes"
+            },
+            "nombreSede": "Nombre Sede",
+            "coordenadaX": "Coordenada X",
+            "coordenadaY": "Coordenada Y",
+            "direccion": "Direccion",
+            "telefonoComunidad": "Telefono Comunidad",
+            "telefonoNegocio": "Telefono Negocio",
+            "capacidadEspacioLibre": "Capacidad Espacio Libre",
+            "descripcionSede": "Descripcion Sede",
+            "horario": "Horario",
+            "imagen1": "Imagen 1",
+            "imagen2": "Imagen 2",
+            "espacioLibre": "Espacio Libre",
+            "espaciosReserva": "Espacios Reserva",
+            "landing": "Landing",
+            "ciudad": "Ciudad",
+            "hostSede": "Host Sede",
+            "entradaMiembros": "Entrada Miembros"
+        }
+    }
+}

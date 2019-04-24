@@ -1,0 +1,101 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sedes">
+            <h2><span jhiTranslate="newoApp.sedes.detail.title">Sedes</span> {{sedes.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newoApp.sedes.nombreSede">Nombre Sede</span></dt>
+                <dd>
+                    <span>{{sedes.nombreSede}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.coordenadaX">Coordenada X</span></dt>
+                <dd>
+                    <span>{{sedes.coordenadaX}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.coordenadaY">Coordenada Y</span></dt>
+                <dd>
+                    <span>{{sedes.coordenadaY}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{sedes.direccion}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.telefonoComunidad">Telefono Comunidad</span></dt>
+                <dd>
+                    <span>{{sedes.telefonoComunidad}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.telefonoNegocio">Telefono Negocio</span></dt>
+                <dd>
+                    <span>{{sedes.telefonoNegocio}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.capacidadEspacioLibre">Capacidad Espacio Libre</span></dt>
+                <dd>
+                    <span>{{sedes.capacidadEspacioLibre}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.descripcionSede">Descripcion Sede</span></dt>
+                <dd>
+                    <span>{{sedes.descripcionSede}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.horario">Horario</span></dt>
+                <dd>
+                    <span>{{sedes.horario}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.imagen1">Imagen 1</span></dt>
+                <dd>
+                    <div *ngIf="sedes.imagen1">
+                        <a (click)="openFile(sedes.imagen1ContentType, sedes.imagen1)">
+                            <img [src]="'data:' + sedes.imagen1ContentType + ';base64,' + sedes.imagen1" style="max-width: 100%;" alt="sedes image"/>
+                        </a>
+                        {{sedes.imagen1ContentType}}, {{byteSize(sedes.imagen1)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.imagen2">Imagen 2</span></dt>
+                <dd>
+                    <div *ngIf="sedes.imagen2">
+                        <a (click)="openFile(sedes.imagen2ContentType, sedes.imagen2)">
+                            <img [src]="'data:' + sedes.imagen2ContentType + ';base64,' + sedes.imagen2" style="max-width: 100%;" alt="sedes image"/>
+                        </a>
+                        {{sedes.imagen2ContentType}}, {{byteSize(sedes.imagen2)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.espacioLibre">Espacio Libre</span></dt>
+                <dd>
+                    <div *ngIf="sedes.espacioLibre">
+                        <a [routerLink]="['/espacio-libre', sedes.espacioLibre?.id, 'view']">{{sedes.espacioLibre?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.espaciosReserva">Espacios Reserva</span></dt>
+                <dd>
+                    <div *ngIf="sedes.espaciosReserva">
+                        <a [routerLink]="['/espacios-reserva', sedes.espaciosReserva?.id, 'view']">{{sedes.espaciosReserva?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.landing">Landing</span></dt>
+                <dd>
+                    <div *ngIf="sedes.landing">
+                        <a [routerLink]="['/landing', sedes.landing?.id, 'view']">{{sedes.landing?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.sedes.ciudad">Ciudad</span></dt>
+                <dd>
+                    <div *ngIf="sedes.ciudad">
+                        <a [routerLink]="['/ciudad', sedes.ciudad?.id, 'view']">{{sedes.ciudad?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sedes', sedes.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

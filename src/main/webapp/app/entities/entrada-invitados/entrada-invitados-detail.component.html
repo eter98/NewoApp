@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="entradaInvitados">
+            <h2><span jhiTranslate="newoApp.entradaInvitados.detail.title">Entrada Invitados</span> {{entradaInvitados.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newoApp.entradaInvitados.fechaEntrada">Fecha Entrada</span></dt>
+                <dd>
+                    <span>{{entradaInvitados.fechaEntrada}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.entradaInvitados.horaEntrada">Hora Entrada</span></dt>
+                <dd>
+                    <span>{{entradaInvitados.horaEntrada}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.entradaInvitados.fechaSalida">Fecha Salida</span></dt>
+                <dd>
+                    <span>{{entradaInvitados.fechaSalida}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.entradaInvitados.horaSalida">Hora Salida</span></dt>
+                <dd>
+                    <span>{{entradaInvitados.horaSalida}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.entradaInvitados.espacioLibre">Espacio Libre</span></dt>
+                <dd>
+                    <div *ngIf="entradaInvitados.espacioLibre">
+                        <a [routerLink]="['/espacio-libre', entradaInvitados.espacioLibre?.id, 'view']">{{entradaInvitados.espacioLibre?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.entradaInvitados.invitados">Invitados</span></dt>
+                <dd>
+                    <div *ngIf="entradaInvitados.invitados">
+                        <a [routerLink]="['/invitados', entradaInvitados.invitados?.id, 'view']">{{entradaInvitados.invitados?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newoApp.entradaInvitados.reservas">Reservas</span></dt>
+                <dd>
+                    <div *ngIf="entradaInvitados.reservas">
+                        <a [routerLink]="['/reservas', entradaInvitados.reservas?.id, 'view']">{{entradaInvitados.reservas?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/entrada-invitados', entradaInvitados.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

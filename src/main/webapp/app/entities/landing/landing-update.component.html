@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-landing-heading" jhiTranslate="newoApp.landing.home.createOrEditLabel">Create or edit a Landing</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!landing.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="landing.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.landing.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                        [(ngModel)]="landing.descripcion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.landing.telefonoNegocio" for="field_telefonoNegocio">Telefono Negocio</label>
+                    <input type="text" class="form-control" name="telefonoNegocio" id="field_telefonoNegocio"
+                        [(ngModel)]="landing.telefonoNegocio" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.landing.numeroPuestos" for="field_numeroPuestos">Numero Puestos</label>
+                    <input type="number" class="form-control" name="numeroPuestos" id="field_numeroPuestos"
+                        [(ngModel)]="landing.numeroPuestos" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.landing.numeroOficinas" for="field_numeroOficinas">Numero Oficinas</label>
+                    <input type="number" class="form-control" name="numeroOficinas" id="field_numeroOficinas"
+                        [(ngModel)]="landing.numeroOficinas" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.landing.equipoEmpresas" for="field_equipoEmpresas">Equipo Empresas</label>
+                    <select class="form-control" id="field_equipoEmpresas" name="equipoEmpresas" [(ngModel)]="landing.equipoEmpresas" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="equipoEmpresasOption.id === landing.equipoEmpresas?.id ? landing.equipoEmpresas : equipoEmpresasOption" *ngFor="let equipoEmpresasOption of equipoempresas; trackBy: trackEquipoEmpresasById">{{equipoEmpresasOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

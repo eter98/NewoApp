@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invitados">
+            <h2><span jhiTranslate="newoApp.invitados.detail.title">Invitados</span> {{invitados.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newoApp.invitados.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{invitados.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.invitados.apellido">Apellido</span></dt>
+                <dd>
+                    <span>{{invitados.apellido}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.invitados.correo">Correo</span></dt>
+                <dd>
+                    <span>{{invitados.correo}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.invitados.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{invitados.telefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="newoApp.invitados.miembros">Miembros</span></dt>
+                <dd>
+                    <div *ngIf="invitados.miembros">
+                        <a [routerLink]="['/miembros', invitados.miembros?.id, 'view']">{{invitados.miembros?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invitados', invitados.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

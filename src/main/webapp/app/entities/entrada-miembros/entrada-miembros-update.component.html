@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-entrada-miembros-heading" jhiTranslate="newoApp.entradaMiembros.home.createOrEditLabel">Create or edit a Entrada Miembros</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!entradaMiembros.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="entradaMiembros.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaMiembros.fechaEntrada" for="field_fechaEntrada">Fecha Entrada</label>
+                    <div class="input-group">
+                        <input id="field_fechaEntrada" type="text" class="form-control" name="fechaEntrada" ngbDatepicker  #fechaEntradaDp="ngbDatepicker" [(ngModel)]="entradaMiembros.fechaEntrada"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaEntradaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaMiembros.fechaSalida" for="field_fechaSalida">Fecha Salida</label>
+                    <div class="input-group">
+                        <input id="field_fechaSalida" type="text" class="form-control" name="fechaSalida" ngbDatepicker  #fechaSalidaDp="ngbDatepicker" [(ngModel)]="entradaMiembros.fechaSalida"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaSalidaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaMiembros.sedes" for="field_sedes">Sedes</label>
+                    <select class="form-control" id="field_sedes" name="sedes" [(ngModel)]="entradaMiembros.sedes">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sedesOption.id === entradaMiembros.sedes?.id ? entradaMiembros.sedes : sedesOption" *ngFor="let sedesOption of sedes; trackBy: trackSedesById">{{sedesOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.entradaMiembros.miembros" for="field_miembros">Miembros</label>
+                    <select class="form-control" id="field_miembros" name="miembros" [(ngModel)]="entradaMiembros.miembros" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="miembrosOption.id === entradaMiembros.miembros?.id ? entradaMiembros.miembros : miembrosOption" *ngFor="let miembrosOption of miembros; trackBy: trackMiembrosById">{{miembrosOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

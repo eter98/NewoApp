@@ -1,0 +1,131 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-sedes-heading" jhiTranslate="newoApp.sedes.home.createOrEditLabel">Create or edit a Sedes</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!sedes.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="sedes.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.nombreSede" for="field_nombreSede">Nombre Sede</label>
+                    <input type="number" class="form-control" name="nombreSede" id="field_nombreSede"
+                        [(ngModel)]="sedes.nombreSede" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.coordenadaX" for="field_coordenadaX">Coordenada X</label>
+                    <input type="number" class="form-control" name="coordenadaX" id="field_coordenadaX"
+                        [(ngModel)]="sedes.coordenadaX" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.coordenadaY" for="field_coordenadaY">Coordenada Y</label>
+                    <input type="number" class="form-control" name="coordenadaY" id="field_coordenadaY"
+                        [(ngModel)]="sedes.coordenadaY" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.direccion" for="field_direccion">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="field_direccion"
+                        [(ngModel)]="sedes.direccion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.telefonoComunidad" for="field_telefonoComunidad">Telefono Comunidad</label>
+                    <input type="text" class="form-control" name="telefonoComunidad" id="field_telefonoComunidad"
+                        [(ngModel)]="sedes.telefonoComunidad" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.telefonoNegocio" for="field_telefonoNegocio">Telefono Negocio</label>
+                    <input type="text" class="form-control" name="telefonoNegocio" id="field_telefonoNegocio"
+                        [(ngModel)]="sedes.telefonoNegocio" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.capacidadEspacioLibre" for="field_capacidadEspacioLibre">Capacidad Espacio Libre</label>
+                    <input type="number" class="form-control" name="capacidadEspacioLibre" id="field_capacidadEspacioLibre"
+                        [(ngModel)]="sedes.capacidadEspacioLibre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.descripcionSede" for="field_descripcionSede">Descripcion Sede</label>
+                    <textarea class="form-control" name="descripcionSede" id="field_descripcionSede"
+                        [(ngModel)]="sedes.descripcionSede" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.horario" for="field_horario">Horario</label>
+                    <input type="text" class="form-control" name="horario" id="field_horario"
+                        [(ngModel)]="sedes.horario" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.imagen1" for="field_imagen1">Imagen 1</label>
+                    <div>
+                        <img [src]="'data:' + sedes.imagen1ContentType + ';base64,' + sedes.imagen1" style="max-height: 100px;" *ngIf="sedes.imagen1" alt="sedes image"/>
+                        <div *ngIf="sedes.imagen1" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{sedes.imagen1ContentType}}, {{byteSize(sedes.imagen1)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen1', 'imagen1ContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen1" (change)="setFileData($event, sedes, 'imagen1', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen1" id="field_imagen1"
+                        [(ngModel)]="sedes.imagen1" />
+                    <input type="hidden" class="form-control" name="imagen1ContentType" id="field_imagen1ContentType"
+                        [(ngModel)]="sedes.imagen1ContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.imagen2" for="field_imagen2">Imagen 2</label>
+                    <div>
+                        <img [src]="'data:' + sedes.imagen2ContentType + ';base64,' + sedes.imagen2" style="max-height: 100px;" *ngIf="sedes.imagen2" alt="sedes image"/>
+                        <div *ngIf="sedes.imagen2" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{sedes.imagen2ContentType}}, {{byteSize(sedes.imagen2)}}</span>
+                            <button type="button" (click)="clearInputImage('imagen2', 'imagen2ContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagen2" (change)="setFileData($event, sedes, 'imagen2', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagen2" id="field_imagen2"
+                        [(ngModel)]="sedes.imagen2" />
+                    <input type="hidden" class="form-control" name="imagen2ContentType" id="field_imagen2ContentType"
+                        [(ngModel)]="sedes.imagen2ContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.espacioLibre" for="field_espacioLibre">Espacio Libre</label>
+                    <select class="form-control" id="field_espacioLibre" name="espacioLibre" [(ngModel)]="sedes.espacioLibre">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="espacioLibreOption.id === sedes.espacioLibre?.id ? sedes.espacioLibre : espacioLibreOption" *ngFor="let espacioLibreOption of espaciolibres; trackBy: trackEspacioLibreById">{{espacioLibreOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.espaciosReserva" for="field_espaciosReserva">Espacios Reserva</label>
+                    <select class="form-control" id="field_espaciosReserva" name="espaciosReserva" [(ngModel)]="sedes.espaciosReserva">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="espaciosReservaOption.id === sedes.espaciosReserva?.id ? sedes.espaciosReserva : espaciosReservaOption" *ngFor="let espaciosReservaOption of espaciosreservas; trackBy: trackEspaciosReservaById">{{espaciosReservaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.landing" for="field_landing">Landing</label>
+                    <select class="form-control" id="field_landing" name="landing" [(ngModel)]="sedes.landing">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="landingOption.id === sedes.landing?.id ? sedes.landing : landingOption" *ngFor="let landingOption of landings; trackBy: trackLandingById">{{landingOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.sedes.ciudad" for="field_ciudad">Ciudad</label>
+                    <select class="form-control" id="field_ciudad" name="ciudad" [(ngModel)]="sedes.ciudad">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="ciudadOption.id === sedes.ciudad?.id ? sedes.ciudad : ciudadOption" *ngFor="let ciudadOption of ciudads; trackBy: trackCiudadById">{{ciudadOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

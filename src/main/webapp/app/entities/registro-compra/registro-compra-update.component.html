@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-registro-compra-heading" jhiTranslate="newoApp.registroCompra.home.createOrEditLabel">Create or edit a Registro Compra</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!registroCompra.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="registroCompra.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.registroCompra.miembros" for="field_miembros">Miembros</label>
+                    <select class="form-control" id="field_miembros" name="miembros" [(ngModel)]="registroCompra.miembros">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="miembrosOption.id === registroCompra.miembros?.id ? registroCompra.miembros : miembrosOption" *ngFor="let miembrosOption of miembros; trackBy: trackMiembrosById">{{miembrosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.registroCompra.espacioLibre" for="field_espacioLibre">Espacio Libre</label>
+                    <select class="form-control" id="field_espacioLibre" name="espacioLibre" [(ngModel)]="registroCompra.espacioLibre">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="espacioLibreOption.id === registroCompra.espacioLibre?.id ? registroCompra.espacioLibre : espacioLibreOption" *ngFor="let espacioLibreOption of espaciolibres; trackBy: trackEspacioLibreById">{{espacioLibreOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.registroCompra.entradaInvitados" for="field_entradaInvitados">Entrada Invitados</label>
+                    <select class="form-control" id="field_entradaInvitados" name="entradaInvitados" [(ngModel)]="registroCompra.entradaInvitados">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="entradaInvitadosOption.id === registroCompra.entradaInvitados?.id ? registroCompra.entradaInvitados : entradaInvitadosOption" *ngFor="let entradaInvitadosOption of entradainvitados; trackBy: trackEntradaInvitadosById">{{entradaInvitadosOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.registroCompra.facturacion" for="field_facturacion">Facturacion</label>
+                    <select class="form-control" id="field_facturacion" name="facturacion" [(ngModel)]="registroCompra.facturacion" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="facturacionOption.id === registroCompra.facturacion?.id ? registroCompra.facturacion : facturacionOption" *ngFor="let facturacionOption of facturacions; trackBy: trackFacturacionById">{{facturacionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newoApp.registroCompra.reservas" for="field_reservas">Reservas</label>
+                    <select class="form-control" id="field_reservas" name="reservas" [(ngModel)]="registroCompra.reservas" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="reservasOption.id === registroCompra.reservas?.id ? registroCompra.reservas : reservasOption" *ngFor="let reservasOption of reservas; trackBy: trackReservasById">{{reservasOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
